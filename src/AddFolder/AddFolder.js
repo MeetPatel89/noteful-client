@@ -4,6 +4,8 @@ import ApiContext from '../ApiContext'
 import config from '../config'
 import './AddFolder.css'
 
+const { API_ENDPOINT } = config;
+
 export default class AddFolder extends Component {
   static defaultProps = {
     history: {
@@ -17,7 +19,7 @@ export default class AddFolder extends Component {
     const folder = {
       name: e.target['folder-name'].value
     }
-    fetch(`${config.API_ENDPOINT}/folders`, {
+    fetch(`${API_ENDPOINT}/folders`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
